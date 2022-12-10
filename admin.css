@@ -61,3 +61,27 @@
     margin-bottom:2px;
     text-align:center;
   }
+
+  .button-container{
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .arr-button{
+    font-family:raleway;
+    width:6rem;
+    height:3rem;
+    color:#111;
+    font-size:.7em;
+    border-radius: 8px;
+    background-color: white;
+    border-color:rgba(34,58,148,80%);
+    border-width:.1em;
+  }
+
+  .selected{
+    font-family:raleway;
+    color:white;
+    background-color: rgba(34,58,148,80%);
+  }

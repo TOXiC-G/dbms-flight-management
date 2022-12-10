@@ -13,10 +13,8 @@ $result2 = mysqli_query($conn,$sql);
 <head>
   <link rel = "stylesheet" href = "styles.css">
   <link rel = "stylesheet" href = "admin.css">
-
-
-
 </head>
+
 <body>
 
 <header class = "main-header">
@@ -36,8 +34,17 @@ $result2 = mysqli_query($conn,$sql);
 <div class="wrapper">
 <h1 class = "sign-up-text" style="font-family: raleway;">Search Flights</h1><br>
 <form action="search_flight.php" method="post">
-  <input onclick="document.getElementById('arrive').disabled = true;" type="radio" name="trip" value="oneway" id="oneway"> One way
-  <input onclick="document.getElementById('arrive').disabled = false;"type="radio" name="trip" value="return" id="return"> Return<br><br>
+  <div class = "button-container">
+    <button class="arr-button" onclick="document.getElementById('arrive').disabled = true;
+      document.getElementById('return').classList.remove('selected')
+      document.getElementById('oneway').classList.add('selected')"
+      name="trip" value="oneway" id="oneway">ONEWAY
+    <button class="arr-button" onclick="document.getElementById('arrive').disabled = false;
+      document.getElementById('oneway').classList.remove('selected')
+      document.getElementById('return').classList.add('selected')" name="trip" value="return" id="return">RETURN
+  </div>
+  <br>
+  
   Source:
   <select name="source">
     <?php
