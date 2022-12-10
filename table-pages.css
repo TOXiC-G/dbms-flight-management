@@ -47,7 +47,7 @@ html,body{
 
 li a:hover:not(.active) {
     background-color: #111;
-    opacity:60%;
+    opacity:70%;
 }
 
 .active {

@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;300&family=Montserrat:wght@600&display=swap');
 
   .wrapper{
+    transition:0.5s;
     margin:auto;
     margin-top:2%;
     margin-bottom:2%;

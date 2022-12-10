@@ -15,10 +15,11 @@ html,body{
 
 .nav ul{
   margin : 0;
+
 }
 
 .nav li{
-  display:inline;
+  display:flex;
   float:right;
 }
 
@@ -47,8 +48,9 @@ html,body{
 
 li a:hover:not(.active) {
     background-color: #111;
-    opacity:60%;
+    opacity:70%;
 }
+
 
 .active {
     background-color: rgba(34,58,148,80%);
