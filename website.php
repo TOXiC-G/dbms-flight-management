@@ -41,7 +41,8 @@ $result2 = mysqli_query($conn,$sql);
       name="trip" value="oneway" id="oneway">ONEWAY
     <button class="arr-button" onclick="document.getElementById('arrive').disabled = false;
       document.getElementById('oneway').classList.remove('selected')
-      document.getElementById('return').classList.add('selected')" name="trip" value="return" id="return">RETURN
+      document.getElementById('return').classList.add('selected')" 
+      name="trip" value="return" id="return">RETURN
   </div>
   <br>
   
@@ -50,7 +51,7 @@ $result2 = mysqli_query($conn,$sql);
     <?php
     while ($row = mysqli_fetch_array($result))
     {
-        echo "<option value='".$row['Name']."'>".$row['Name']."</option>";
+        echo "<option class = \"options\" value='".$row['Name']."'>".$row['Name']."</option>";
     }
     ?>
   </select><br><br>
