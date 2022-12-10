@@ -65,10 +65,11 @@
   .button-container{
     display: flex;
     justify-content: center;
-    gap: 12px;
+    gap: 1em;
   }
 
   .arr-button{
+    transition:.5s;
     font-family:raleway;
     width:6rem;
     height:3rem;
@@ -78,6 +79,10 @@
     background-color: white;
     border-color:rgba(34,58,148,80%);
     border-width:.1em;
+  }
+  
+  .arr-button:hover{
+    background-color: rgba(34,58,148,30%);
   }
 
   .selected{
