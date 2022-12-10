@@ -1,0 +1,43 @@
+<?php
+
+$id = $_POST['Id'];
+$price = $_POST['price'];
+
+
+ ?>
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel = "stylesheet" href = "styles.css">
+  <link rel = "stylesheet" href = "contact.css">
+</head>
+<body>
+
+  <header class = "main-header">
+    <nav class = "nav main-nav">
+      <ul>
+        <li><a href="website.php">Home</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
+        <li><a href="admin.html">Admin</a></li>
+        <li><a class="active" href="contact.html">Contact</a></li>
+        <li id = "c-name"><img id = "c-img" src = "images/airplane1.png">IndiGo</li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<div class="wrapper">
+  <form action="contact.php" method="post">
+
+    Name:  <input class = "input-form" type="text" placeholder="Name" name="name" required></input><br><br>
+    Mobile No: <input  type="number" placeholder="XXXXXXXXXX" maxlength="10" name="mob_no" required></input><br><br>
+    Email Id:  <input type="email" placeholder="abcxyz@gmail.com" name="email"></input><br><br>
+    Feedback: <br><textarea  rows="20" cols="20" placeholder="Any suggestions or complaints...." name="feedback"></textarea><br><br>
+
+    <input type="submit" value="Send Message"></input>
+  </form>
+</div>
+
+
+</body>
+</html>

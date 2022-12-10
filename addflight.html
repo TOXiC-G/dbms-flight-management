@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel = "stylesheet" href = "admin.css">
+  <link rel = "stylesheet" href = "styles.css">
+</head>
+<body>
+
+  <header class = "main-header">
+    <nav class = "nav main-nav">
+      <ul>
+        <li><a href="logout.php">Logout</a></li>
+        <li><a href="welcome.php">Home</a></li>
+        <li><a class="active" href="addflight.html">Add Flight</a></li>
+        <li><a href="deleteflight.html">Delete Flight</a></li>
+        <li><a href="updateflight.html">Update Flight</a></li>
+        <li><a href="cancelbooking.html">Cancel Booking</a></li>
+        <li id = "c-name"><img id = "c-img" src = "images/airplane1.png">IndiGo</li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <div class="wrapper">
+    <form action="addflight.php" method="post">
+
+      Flight Id:  <input type="number" name="id" required></input><br><br>
+      Flight Name:   <input type="text" name="name" required ></input><br><br>
+      Source <input type="text" name="source" required></input><br><br>
+      Destination:  <input type="text"  name="destination" required></input><br><br>
+      Departure:  <input type="date"  name="departure" required></input><br><br>
+      Arrival:  <input type="date"  name="arrival" required></input><br><br>
+      Economic Fair:  <input type="number"  name="Fair_Economic" required></input><br><br>
+      Business Fair:  <input type="number"  name="Fair_Business" required></input><br><br>
+      Available Seats:  <input type="number"  name="Available_seats" required></input><br><br>
+      <input type="submit" value="Add Flight"></input>
+
+
+
+    </form>
+  </div>
+
+
+</body>
+</html>

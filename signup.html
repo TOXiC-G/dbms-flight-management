@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel = "stylesheet" href= "styles.css">
+  <link rel = "stylesheet" href= "admin.css">
+  
+
+
+</head>
+<body>
+
+  <header class = "main-header">
+    <nav class = "nav main-nav">
+      <ul>
+        <li><a href="website.php">Home</a></li>
+        <li><a class="active"href="signup.html">Sign Up</a></li>
+        <li><a href="admin.html">Admin</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li id = "c-name"><img id = "c-img" src = "images/airplane1.png">IndiGo</li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="wrapper">
+    <h1 class = "sign-up-text" style="font-family: raleway;">Sign Up</h1><br>
+  <form action="signup_handle.php" method="post">
+
+    Username: <input type="text" name="username" required></input><br><br>
+    Password: <input type="password" name="password1" required></input><br><br>
+    Confirm Password: <input type="password" name="password2" required></input><br><br>
+
+    <input type="submit" value="Create"></input>
+
+
+  </form>
+</div>
+
+
+
+</body>
+</html>
