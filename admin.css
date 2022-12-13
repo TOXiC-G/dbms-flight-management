@@ -69,6 +69,7 @@
   }
 
   .arr-button{
+    display:inline-block;
     transition:.5s;
     font-family:raleway;
     width:6rem;
@@ -79,7 +80,15 @@
     background-color: white;
     border-color:rgba(34,58,148,80%);
     border-width:.1em;
+    margin-right:none;
   }
+  .trip-text{
+    font-family:raleway;
+    display:inline;
+    position:relative;
+    margin-top: .7rem;
+  }
+
   
   .arr-button:hover{
     background-color: rgba(34,58,148,30%);

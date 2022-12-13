@@ -1,0 +1,4 @@
+JOIN
+SELECT FirstName, Name, Source, Destination
+FROM users INNER JOIN flights
+ON users.flight_id = flights.Id;

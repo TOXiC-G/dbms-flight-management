@@ -24,25 +24,27 @@ $result2 = mysqli_query($conn,$sql);
         <li><a href="signup.html">Sign Up</a></li>
         <li><a href="admin.html">Admin</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li id = "c-name"><img id = "c-img" src = "images/airplane1.png">IndiGo</li>
         <li><a href="about.html">About</a></li>
+        <li id = "c-name"><a id = "c-text" href = "website.php"><img id = "c-img" src = "images/airplane1.png">IndiGo</a></li>  
       </ul>
     </nav>
-  </header>
+</header>
 
 
 <div class="wrapper">
 <h1 class = "sign-up-text" style="font-family: raleway;">Search Flights</h1><br>
 <form action="search_flight.php" method="post">
   <div class = "button-container">
-    <button class="arr-button" onclick="document.getElementById('arrive').disabled = true;
+    <input type = "radio" class="arr-button" onclick="document.getElementById('arrive').disabled = true;
       document.getElementById('return').classList.remove('selected')
       document.getElementById('oneway').classList.add('selected')"
-      name="trip" value="oneway" id="oneway">ONEWAY
-    <button class="arr-button" onclick="document.getElementById('arrive').disabled = false;
+      value="ONEWAY" id="oneway" name="trip">
+    <label class = "trip-text" name="trip">ONEWAY</label>
+    <input type = "radio" class="arr-button" onclick="document.getElementById('arrive').disabled = false;
       document.getElementById('oneway').classList.remove('selected')
-      document.getElementById('return').classList.add('selected')" 
-      name="trip" value="return" id="return">RETURN
+      document.getElementById('return').classList.add('selected')"
+      value="RETURN" id="return" name="trip">
+    <label class = "trip-text" name="trip">RETURN</label>
   </div>
   <br>
   
@@ -74,7 +76,7 @@ $result2 = mysqli_query($conn,$sql);
       <option value="business">Business</option>
     </select><br><br>
 
-  <input type="submit" value="Search Flights"></input>
+  <input type="submit" name = "Submit" value="Search Flights"></input>
 
 
 </form>

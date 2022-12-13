@@ -130,14 +130,19 @@ table {
   }
 
   .book-button{
-    border:none;
+    transition:.5s;
     text-align: center;
-    background-color:rgb(37, 64, 153);
-    color:white;
+    background-color: white;
+    border-color:rgba(34,58,148,80%);
+    border-width:.1em;
     text-decoration: none;
     display: inline-block;
     font-family:raleway;
     padding: 10px 10px;
     font-size: 16px;
     border-radius: 6px;
+  }
+
+  .book-button:hover{
+    background-color: rgba(34,58,148,30%);
   }

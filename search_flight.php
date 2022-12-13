@@ -10,12 +10,12 @@
   <header class = "main-header">
     <nav class = "nav main-nav">
       <ul>
-        <li><a href="website.php">Home</a></li>
+        <li><a class="active" href="website.php">Home</a></li>
         <li><a href="signup.html">Sign Up</a></li>
         <li><a href="admin.html">Admin</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li id = "c-name"><img id = "c-img" src = "images/airplane1.png">IndiGo</li>
         <li><a href="about.html">About</a></li>
+        <li id = "c-name"><a id = "c-text" href = "website.php"><img id = "c-img" src = "images/airplane1.png">IndiGo</a></li>  
       </ul>
     </nav>
   </header>
@@ -34,11 +34,12 @@ include 'config.php';
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $arrival = null;
   $source = $_POST["source"];
   $destination = $_POST["destination"];
   $departure = $_POST["departdate"];
   $trip = $_POST["trip"];
-  if ($trip == 'return') {
+  if ($trip == 'RETURN') {
     $arrival = $_POST["arrivedate"];
   }
   $adults = $_POST["adults"];
@@ -47,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $total_passengers = $adults + $childrens;
 
 }
-if($trip == 'oneway'){
+if($trip == 'ONEWAY'){
 $sql = "SELECT * FROM flights WHERE Source = '$source' AND Destination = '$destination' AND '$departure'>=Departure AND Available_seats>0 ";
 $result = mysqli_query($conn,$sql);
 }
@@ -60,7 +61,7 @@ echo"<table border ='1'>";
 echo "<tr><th>Id</th><th>Name</th><th>Source</th><th>Destination</th><th>Fare</th><th>Action</th></tr>";
 if ($trip_class == 'economic') {
 
-  if ($trip == 'oneway') {
+  if ($trip == 'ONEWAY') {
 
   while ($row = mysqli_fetch_assoc($result)) {
     $price = $row['Fair_Economic']*$adults+0.5*$row['Fair_Economic']*$childrens;
