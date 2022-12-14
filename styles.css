@@ -35,34 +35,29 @@ html,body{
   font-family: raleway;
 }
 
-#c-name{
-  float:left;
-  transition:.5s;
-  display:inline-block;
-  margin:none;
-  padding:none;
-  padding-left:none;
-  margin-left:none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  font-size:1.4rem;
-  font-family: raleway;
+#header-logo{
+  height: 1.6rem;
+  width:auto;
+  display:block;
 }
 
-#c-img{
-  width:1.35rem;
+#header-logo-li{
+  float:left;
+  padding:0px;
 }
+
+#header-logo-li a{
+  padding:auto;
+}
+
+#header-logo-li a:hover{
+  background-color: rgba(17, 17, 17, 0);
+}
+
 
 li a:hover:not(.active) {
     background-color: #111;
     opacity:70%;
-}
-
-#c-name a:hover{
-  background-color: none;
-  opacity:100%;
-  background-color: rgba(17, 17, 17, 0);
 }
 
 

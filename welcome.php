@@ -2,6 +2,7 @@
 <html>
 <head>
   <link rel = "stylesheet" href = "table-pages.css">
+  <link rel = "stylesheet" href = "styles.css">
 </head>
 <body>
   <header class = "main-header">
@@ -13,7 +14,7 @@
         <li><a href="deleteflight.html">Delete Flight</a></li>
         <li><a href="updateflight.html">Update Flight</a></li>
         <li><a href="cancelbooking.html">Cancel Booking</a></li>
-        <li id = "c-name"><img id = "c-img" src = "images/airplane1.png">IndiGo</li>
+        <li id = "header-logo-li"><a href="website.php"> <img id = "header-logo" src="images/header-logo.png"></a></li>
       </ul>
     </nav>
   </header>

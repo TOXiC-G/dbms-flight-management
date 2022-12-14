@@ -33,17 +33,13 @@ html,body{
   font-family: raleway;
 }
 
-#c-name{
-  float: left; 
-  color:white;
-  font-family: sans-serif;
-  font-size:2rem;
-  padding:.2em;
-  padding-top:.1em;
-  padding-left:none;
+#header-logo{
+  height: 1.6rem;
+  width:auto;
 }
-#c-img{
-  width:40px;
+
+#header-logo-li{
+  float:left;
 }
 
 li a:hover:not(.active) {
