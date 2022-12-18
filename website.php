@@ -1,4 +1,4 @@
-<<?php
+<?php
 include 'config.php';
 $sql = "SELECT * FROM cities";
 $result = mysqli_query($conn,$sql);
@@ -16,7 +16,6 @@ $result2 = mysqli_query($conn,$sql);
 </head>
 
 <body>
-
 <header class = "main-header">
     <nav class = "nav main-nav">
       <ul>
