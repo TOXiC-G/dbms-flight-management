@@ -28,6 +28,9 @@
       box-sizing: border-box;
   }
 
+  #a-id{
+    padding:10px;
+  }
   input[type=submit] {
       width: 100%;
       background-color: rgba(34,58,148,80%);
@@ -41,12 +44,34 @@
       transition:.5s;
   }
 
+  .no-button{
+      width: 100%;
+      background-color: rgba(148, 34, 34, 0.8);
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 30px;
+      font-family: raleway;
+      cursor: pointer;
+      transition:.5s;
+  }
+
+  .no-button:hover{
+      transform:scale(1.10);
+      background-color: rgba(148, 34, 34, 0.5);
+  }
+
   input[type=submit]:hover {
       transform:scale(1.10);
       background-color: rgba(34,58,148,50%);
   }
 
   
+  #sure{
+    display: block;
+    text-align: center;
+  }
 
   .logo{
     height:150px;

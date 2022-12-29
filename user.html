@@ -3,15 +3,16 @@
 <head>
   <link rel = "stylesheet" href = "admin.css">
   <link rel = "stylesheet" href = "styles.css">
+  <title></title>
 </head>
 <body>
 
   <header class = "main-header">
     <nav class = "nav main-nav">
       <ul>
-        <li><a href="user.html">Log In</a></li>
+        <li><a class="active" href="user.html">Log In</a></li>
         <li><a href="signup.html">Sign Up</a></li>
-        <li><a class="active" href="admin.html">Admin</a></li>
+        <li><a href="admin.html">Admin</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="about.html">About</a></li>
         <li id = "header-logo-li"><a href="user.html"> <img id = "header-logo" src="images/header-logo.png"></a></li>
@@ -20,7 +21,7 @@
   </header>
   <img class = "logo" src = "images/airplane1.png">
   <div class="wrapper">
-  <form action="admin_login.php" method="post">
+  <form action="user_login.php" method="post">
 
     Username: <input type="text" name="username" required></input><br><br>
     Password: <input type="password" name="password" required></input><br><br>

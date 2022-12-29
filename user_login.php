@@ -1,5 +1,8 @@
 <?php
-
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
 include 'config.php';
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -8,7 +11,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
    $username = $_POST['username'];
    $password = $_POST['password'];
 
-   $sql = "SELECT Id FROM admins WHERE username = '$username' and password = '$password'";
+   $sql = "SELECT user_id FROM users WHERE username = '$username' and password = '$password'";
    $result = mysqli_query($conn,$sql);
    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
    //$active = $row['active'];
@@ -22,7 +25,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
       $_SESSION['login_user'] = $username;
     
 
-      header("location: welcome.php");
+      header("location: user_welcome.php");
    }else {
       $error = "Your Login Name or Password is invalid<br><br>";
       echo $error;

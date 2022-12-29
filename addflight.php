@@ -1,23 +1,22 @@
-<<?php
+<?php
 
 include 'config.php';
 
-$id = $_POST['id'];
-$name = $_POST['name'];
+$a_id = $_POST['a-id'];
 $source = $_POST['source'];
 $destination = $_POST['destination'];
 $departure = $_POST['departure'];
 $arrival = $_POST['arrival'];
-$fair_economic = $_POST['Fair_Economic'];
-$fair_business = $_POST['Fair_Business'];
+$fare_economic = $_POST['fare_economic'];
+$fare_business = $_POST['fare_business'];
 $Available_seats = $_POST['Available_seats'];
 
-$sql = "INSERT INTO flights(Id, Name, Source, Destination, Departure, Arrival, Fair_Economic, Fair_Business, Available_seats) VALUES ('$id', '$name', '$source', '$destination', '$departure', '$arrival', '$fair_economic', '$fair_business', '$Available_seats')";
+$sql = "INSERT INTO flights(f_id, a_id, Source, Destination, Departure, Arrival, Fare_Economic, Fare_Business, Available_seats) VALUES ('NULL', '$a_id', '$source', '$destination', '$departure', '$arrival', '$fare_economic', '$fare_business', '$Available_seats')";
 
 
 
 if((!mysqli_query($conn,$sql))){
-  echo "Not Added!!!";
+  echo "Not Added!!!, Please check that the details are entered correctly";
 }
 else {
   echo "Flight Added!!!";
@@ -29,10 +28,15 @@ $sql2 = "INSERT IGNORE INTO cities (Name) VALUES('$destination')";
 mysqli_query($conn,$sql1);
 mysqli_query($conn,$sql2);
 
-header("Refresh:2; url=welcome.php");
+header("Refresh:3; url=flights.php");
 
 mysqli_close($conn);
 
 
 
- ?>
+?>
+
+
+
+
+

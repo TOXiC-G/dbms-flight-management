@@ -7,14 +7,13 @@
 </head>
 <body>
 
-  <header class = "main-header">
+<header class = "main-header">
     <nav class = "nav main-nav">
       <ul>
-        <li><a class="active" href="website.php">Home</a></li>
-        <li><a href="signup.html">Sign Up</a></li>
-        <li><a href="admin.html">Admin</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="logout.php">Logout</a></li>
+        <li><a href="user_welcome.php">Home</a></li>
+        <li><a class="active" href="website.php">Search Flights</a></li>
+        <li><a href="cancelbooking_u.html">Cancel Booking</a></li>
         <li id = "header-logo-li"><a href="website.php"> <img id = "header-logo" src="images/header-logo.png"></a></li>
       </ul>
     </nav>
@@ -45,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $adults = $_POST["adults"];
   $childrens = $_POST["childrens"];
   $trip_class = $_POST['travel_class'];
-  $total_passengers = $adults + $childrens;
+  $total_passengers = (int)$adults + (int)$childrens;
 
 }
 if($trip == 'ONEWAY'){
@@ -58,18 +57,18 @@ else {
 }
 
 echo"<table border ='1'>";
-echo "<tr><th>Id</th><th>Name</th><th>Source</th><th>Destination</th><th>Fare</th><th>Action</th></tr>";
+echo "<tr><th>Flight ID</th><th>Aicraft ID</th><th>Source</th><th>Destination</th><th>Fare</th><th>Action</th></tr>";
 if ($trip_class == 'economic') {
 
   if ($trip == 'ONEWAY') {
 
   while ($row = mysqli_fetch_assoc($result)) {
-    $price = $row['Fair_Economic']*$adults+0.5*$row['Fair_Economic']*$childrens;
-    $id = $row['Id'];
+    $price = (int)$row['Fare_Economic']*(int)$adults+(1/2)*(int)$row['Fare_Economic']*(int)$childrens;
+    $id = $row['f_id'];
 
   echo "<tr>
-    <td>{$row['Id']}</td>
-    <td>{$row['Name']}</td>
+    <td>{$row['f_id']}</td>
+    <td>{$row['a_id']}</td>
     <td>{$row['Source']}</td>
     <td>{$row['Destination']}</td>
     <td>{$price}</td><td>
@@ -87,17 +86,16 @@ if ($trip_class == 'economic') {
   }
   else {
     while ($row = mysqli_fetch_assoc($result)) {
-      $price_temp = $row['Fair_Economic']*$adults+0.5*$row['Fair_Economic']*$childrens;
+      $price_temp = (int)$row['Fare_Economic']*(int)$adults+(1/2)*(int)$row['Fare_Economic']*(int)$childrens;
       $price = $price_temp*2;
-      $id = $row['Id'];
+      $id = $row['f_id'];
 
     echo "<tr>
-      <td>{$row['Id']}</td>
-        <td>{$row['Name']}</td>
+        <td>{$row['f_id']}</td>
+        <td>{$row['a_id']}</td>
         <td>{$row['Source']}</td>
         <td>{$row['Destination']}</td>
-        <td>{$price}</td>
-        <td>
+        <td>{$price}</td><td>
           <form id= \"Passing\" method=\"post\" action=\"book_flight.php\">
             <input name=\"Id\" type=\"hidden\" value=\"$id\">
             <input name=\"price\" type=\"hidden\" value=\"$price\">
@@ -116,11 +114,11 @@ else {
   if ($trip == 'oneway') {
 
   while ($row = mysqli_fetch_assoc($result)) {
-    $price = $row['Fair_Business']*$adults+0.5*$row['Fair_Business']*$childrens;
-    $id = $row['Id'];
+    $price = (int)$row['Fare_Business']*(int)$adults+(1/2)*(int)$row['Fare_Business']*(int)$childrens;
+    $id = $row['f_id'];
     echo "<tr>
-      <td>{$row['Id']}</td>
-      <td>{$row['Name']}</td>
+      <td>{$row['f_id']}</td>
+      <td>{$row['a_id']}</td>
       <td>{$row['Source']}</td>
       <td>{$row['Destination']}</td>
       <td>{$price}</td>
@@ -136,12 +134,12 @@ else {
   }
   else {
     while ($row = mysqli_fetch_assoc($result)) {
-      $price_temp = $row['Fair_Business']*$adults+0.5*$row['Fair_Business']*$childrens;
+      $price_temp = (int)$row['Fare_Business']*(int)$adults+(1/2)*(int)$row['Fare_Business']*(int)$childrens;
       $price = $price_temp*2;
-      $id = $row['Id'];
+      $id = $row['f_id'];
       echo "<tr>
-      <td>{$row['Id']}</td>
-        <td>{$row['Name']}</td>
+        <td>{$row['f_id']}</td>
+        <td>{$row['a_id']}</td>
         <td>{$row['Source']}</td>
         <td>{$row['Destination']}</td>
         <td>{$price}</td><td>

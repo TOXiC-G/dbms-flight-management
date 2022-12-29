@@ -5,7 +5,7 @@ $result = mysqli_query($conn,$sql);
 $result2 = mysqli_query($conn,$sql);
 
 
- ?>
+?>
 
 
 <!DOCTYPE html>
@@ -13,25 +13,37 @@ $result2 = mysqli_query($conn,$sql);
 <head>
   <link rel = "stylesheet" href = "styles.css">
   <link rel = "stylesheet" href = "admin.css">
+  <script>
+    function date(){
+    let date_picker = document.getElementById("dept");
+    date_picker.addEventListener('change', findDate);
+
+    function findDate(event)
+    {
+      let dept_date = event.target.value;
+      document.getElementById("arrive").setAttribute("min", dept_date);
+    } 
+  }
+  </script>
 </head>
 
-<body>
+<body onload="date()">
+  
 <header class = "main-header">
     <nav class = "nav main-nav">
       <ul>
-        <li><a class="active" href="website.php">Home</a></li>
-        <li><a href="signup.html">Sign Up</a></li>
-        <li><a href="admin.html">Admin</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="about.html">About</a></li>
-        <li id = "header-logo-li"><a href="website.php"> <img id = "header-logo" src="images/header-logo.png"></a></li>
+        <li><a href="logout.php">Logout</a></li>
+        <li><a href="user_welcome.php">Home</a></li>
+        <li><a class="active"  href="#">Search Flights</a></li>
+        <li><a href="cancelbooking_u.html">Cancel Booking</a></li>
+        <li id = "header-logo-li"><a href="user_welcome.php"> <img id = "header-logo" src="images/header-logo.png"></a></li>
       </ul>
     </nav>
-</header>
+  </header>
 
 
 <div class="wrapper">
-<h1 class = "sign-up-text" style="font-family: raleway;">Search Flights</h1><br>
+<h1 id = "heading"class = "sign-up-text" style="font-family: raleway;">Search Flights</h1><br>
 <form action="search_flight.php" method="post">
   <div class = "button-container">
     <input type = "radio" class="arr-button" onclick="document.getElementById('arrive').disabled = true;
@@ -66,7 +78,7 @@ $result2 = mysqli_query($conn,$sql);
     ?>
   </select><br><br>
 
-  Departure: <input type="date" name="departdate" id="dept" required></input><br><br>
+  Departure: <input id="dept" type="date" name="departdate" required></input><br><br>
   Arrival:   <input type="date" name="arrivedate" id="arrive" required></input><br><br>
   Adults: <input type="number" min="0" name="adults"></input><br><br>
   Childrens: <input type="number" min="0" name="childrens" placeholder="Above 3yrs"></input><br><br>
