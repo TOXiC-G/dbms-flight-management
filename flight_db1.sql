@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 29, 2022 at 01:39 PM
+-- Generation Time: Dec 29, 2022 at 04:54 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -59,7 +59,8 @@ CREATE TABLE `aircraft_details` (
 INSERT INTO `aircraft_details` (`a_id`, `model`) VALUES
 (1, 'A320CEO'),
 (2, 'A320NEO'),
-(3, 'ATR 72-6');
+(3, 'ATR 72-6'),
+(4, 'A321NEO');
 
 -- --------------------------------------------------------
 
@@ -80,10 +81,10 @@ CREATE TABLE `bookings` (
 --
 
 INSERT INTO `bookings` (`b_id`, `user_id`, `f_id`, `seats_booked`, `total_cost`) VALUES
-(1, 1, 1, 1, 6700),
-(2, 1, 3, 1, 7500),
-(3, 1, 3, 1, 15000),
-(4, 2, 1, 1, 6700);
+(1, 1, 100, 1, 6700),
+(2, 1, 101, 1, 7500),
+(3, 1, 101, 1, 15000),
+(4, 2, 100, 1, 6700);
 
 -- --------------------------------------------------------
 
@@ -151,9 +152,16 @@ CREATE TABLE `flights` (
 --
 
 INSERT INTO `flights` (`f_id`, `a_id`, `Source`, `Destination`, `Departure`, `Arrival`, `Fare_Economic`, `Fare_Business`, `Available_seats`) VALUES
-(1, 1, 'Mumbai', 'Goa', '2022-12-24', '2022-12-24', 6700, 10001, 55),
-(2, 1, 'Goa', 'Mumbai', '2022-12-29', '2022-12-30', 6900, 11000, 60),
-(3, 2, 'Bangalore', 'Karnataka', '2022-12-29', '2022-12-30', 7500, 9500, 63);
+(100, 1, 'Mumbai', 'Goa', '2022-12-24', '2022-12-24', 6700, 10001, 55),
+(101, 2, 'Bangalore', 'Karnataka', '2022-12-29', '2022-12-30', 7500, 9500, 63),
+(102, 1, 'Goa', 'Mumbai', '2022-12-29', '2022-12-30', 6900, 11000, 60),
+(103, 2, 'Delhi', 'Bangalore', '2022-12-29', '2022-12-29', 4000, 8000, 60),
+(104, 4, 'Delhi', 'Mumbai', '2022-11-25', '2022-11-30', 7500, 11000, 60),
+(105, 3, 'Mumbai', 'Rajasthan', '2022-12-25', '2022-12-20', 4500, 7500, 60),
+(106, 1, 'Goa', 'Mumbai', '2022-12-23', '2022-12-23', 5000, 7500, 60),
+(107, 1, 'Delhi', 'Iceland', '2022-11-01', '2022-11-05', 35000, 40000, 60),
+(108, 2, 'Bangalore', 'Dubai', '2022-12-14', '2022-12-28', 12000, 18000, 60),
+(109, 3, 'Delhi', 'New York', '2022-12-20', '2022-12-28', 11000, 19000, 60);
 
 -- --------------------------------------------------------
 
@@ -199,7 +207,7 @@ ALTER TABLE `aircraft_details`
 --
 ALTER TABLE `bookings`
   ADD PRIMARY KEY (`b_id`),
-  ADD KEY `user_id` (`user_id`),
+  ADD KEY `bookings_ibfk_1` (`user_id`),
   ADD KEY `bookings_ibfk_2` (`f_id`);
 
 --
@@ -241,7 +249,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `aircraft_details`
 --
 ALTER TABLE `aircraft_details`
-  MODIFY `a_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `a_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `bookings`
@@ -259,7 +267,7 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT for table `flights`
 --
 ALTER TABLE `flights`
-  MODIFY `f_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `f_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -275,14 +283,14 @@ ALTER TABLE `users`
 -- Constraints for table `bookings`
 --
 ALTER TABLE `bookings`
-  ADD CONSTRAINT `bookings_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
-  ADD CONSTRAINT `bookings_ibfk_2` FOREIGN KEY (`f_id`) REFERENCES `flights` (`f_id`);
+  ADD CONSTRAINT `bookings_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `bookings_ibfk_2` FOREIGN KEY (`f_id`) REFERENCES `flights` (`f_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `flights`
 --
 ALTER TABLE `flights`
-  ADD CONSTRAINT `a_id` FOREIGN KEY (`a_id`) REFERENCES `aircraft_details` (`a_id`);
+  ADD CONSTRAINT `a_id` FOREIGN KEY (`a_id`) REFERENCES `aircraft_details` (`a_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
