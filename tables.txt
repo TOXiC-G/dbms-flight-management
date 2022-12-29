@@ -1,0 +1,16 @@
+USE flight_db1;
+
+CREATE TABLE admins(id int PRIMARY KEY AUTO_INCREMENT, Username varchar(25) NOT NULL, password varchar(25) NOT NULL);
+
+CREATE TABLE cities(Name varchar(25) PRIMARY KEY);
+
+CREATE TABLE feedback_users(u_id int PRIMARY KEY AUTO_INCREMENT,Name varchar(255) NOT NULL, Contact int,CONSTRAINT chk_contact CHECK (Contact not like '%[^0-9]%'), Email varchar(255), CONSTRAINT chk_email CHECK (Email like '%@%.%');
+
+CREATE TABLE feedback(fe_id int PRIMARY KEY AUTO_INCREMENT, u_id int ,FOREIGN KEY (u_id) REFERENCES feedback_users(u_id), feedback varchar(255));
+
+CREATE TABLE flights(f_id int PRIMARY KEY AUTO_INCREMENT, Source varchar(25), Destination varchar(25), Departure date, Arrival date, Fare_Economic int, Fare_Business int, Available_seats int, CONSTRAINT chk_date CHECK (Arrival>Departure));
+
+CREATE TABLE users(user_id int PRIMARY KEY AUTO_INCREMENT, password varchar(25) NOT NULL, first_name varchar(25),last_name, Contact int,CONSTRAINT chk_contact CHECK (Contact not like '%[^0-9]%'), Email varchar(255), CONSTRAINT chk_email CHECK (Email like '%@%.%'));
+
+CREATE TABLE bookings(b_id int PRIMARY KEY AUTO_INCREMENT, user_id int, FOREIGN KEY user_id REFERENCES users(user_id), seats_booked int NOT NULL, total_cost int NOT NULL);
+
