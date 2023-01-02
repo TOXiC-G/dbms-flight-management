@@ -152,7 +152,7 @@
   echo"
   <tr>
     <td class=\"last-row\" colspan=\"9\" align=\"center\"> 
-      <button onclick = \"window.location.href = 'aircraft.php'\" class = \"show-more arr-button\" type = \"button\">Show more</button>
+      <button onclick = \"window.location.href = 'aircrafts.php'\" class = \"show-more arr-button\" type = \"button\">Show more</button>
     </td>
   </tr>";
   echo "</table>";
