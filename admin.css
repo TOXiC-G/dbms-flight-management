@@ -125,3 +125,11 @@
     background-color: rgba(34,58,148,80%);
   }
 
+.show-more{
+    width:25%;
+    font-size: 1rem;
+}
+
+.show-more:hover{
+  cursor: pointer;
+}

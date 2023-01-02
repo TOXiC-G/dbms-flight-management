@@ -3,6 +3,8 @@
 <head>
   <link rel = "stylesheet" href = "table-pages.css">
   <link rel = "stylesheet" href = "styles.css">
+  <link rel = "stylesheet" href = "admin.css">
+  <title>Home</title>
 </head>
 <body>
   <header class = "main-header">
@@ -26,6 +28,7 @@
         <li><a href="flights.php">Flights</a></li>
         <li><a href="aircrafts.php">Aircrafts</a></li>
         <li><a href="booking.php">Bookings</a></li>
+        <li><a href="admin_users.php">Users</a></li>
         <li><a href="addAdmin.html">Add Admin</a></li>
         <li id = "header-logo-li"><a href="website.php"> <img id = "header-logo" src="images/header-logo.png"></a></li>
       </ul>
@@ -69,6 +72,13 @@
       <td>{$row['Available_seats']}</td>
     </tr>";
   }
+
+  echo"
+  <tr>
+    <td class=\"last-row\" colspan=\"9\" align=\"center\"> 
+      <button onclick = \"window.location.href = 'flights.php'\" class = \"show-more arr-button\" type = \"button\">Show more</button>
+    </td>
+  </tr>";
   echo "</table>";
 
 
@@ -104,6 +114,12 @@
     </tr>";
 
   }
+  echo"
+  <tr>
+    <td class=\"last-row\" colspan=\"9\" align=\"center\"> 
+      <button onclick = \"window.location.href = 'admin_users.php'\" class = \"show-more arr-button\" type = \"button\">Show more</button>
+    </td>
+  </tr>";
   echo "</table>";
 
   mysqli_close($conn);
@@ -133,6 +149,12 @@
     </tr>";
 
   }
+  echo"
+  <tr>
+    <td class=\"last-row\" colspan=\"9\" align=\"center\"> 
+      <button onclick = \"window.location.href = 'aircraft.php'\" class = \"show-more arr-button\" type = \"button\">Show more</button>
+    </td>
+  </tr>";
   echo "</table>";
 
   mysqli_close($conn);
@@ -148,7 +170,7 @@
 
   $result = mysqli_query($conn,$sql);
 
-  echo"<table border ='1'>";
+  echo"<table class = \"last-table\" border ='1'>";
   echo "<tr>
   <th>Booking_ID</th>
   <th>User ID</th>
@@ -166,6 +188,12 @@
     </tr>";
 
   }
+  echo"
+  <tr>
+    <td class=\"last-row\" colspan=\"9\" align=\"center\"> 
+      <button onclick = \"window.location.href = 'booking.php'\" class = \"show-more arr-button\" type = \"button\">Show more</button>
+    </td>
+  </tr>";
   echo "</table>";
 
   mysqli_close($conn);

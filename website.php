@@ -13,6 +13,7 @@ $result2 = mysqli_query($conn,$sql);
 <head>
   <link rel = "stylesheet" href = "styles.css">
   <link rel = "stylesheet" href = "admin.css">
+  <title></title>
   <script>
     function date(){
     let date_picker = document.getElementById("dept");
