@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 29, 2022 at 04:54 PM
+-- Generation Time: Jan 02, 2023 at 09:48 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -60,7 +60,11 @@ INSERT INTO `aircraft_details` (`a_id`, `model`) VALUES
 (1, 'A320CEO'),
 (2, 'A320NEO'),
 (3, 'ATR 72-6'),
-(4, 'A321NEO');
+(4, 'A321NEO'),
+(5, 'A220CEO'),
+(6, 'A220NEO'),
+(7, 'A120CEO'),
+(8, 'A130CEO');
 
 -- --------------------------------------------------------
 
@@ -84,7 +88,9 @@ INSERT INTO `bookings` (`b_id`, `user_id`, `f_id`, `seats_booked`, `total_cost`)
 (1, 1, 100, 1, 6700),
 (2, 1, 101, 1, 7500),
 (3, 1, 101, 1, 15000),
-(4, 2, 100, 1, 6700);
+(4, 2, 100, 1, 6700),
+(5, 3, 106, 1, 5000),
+(6, 4, 107, 1, 35000);
 
 -- --------------------------------------------------------
 
@@ -129,6 +135,13 @@ CREATE TABLE `feedback` (
   `feedback` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`fe_id`, `Name`, `mob_no`, `Email`, `feedback`) VALUES
+(1, 'Nathan', 2147483647, 'nathan532009@gmail.com', 'Test Feedback');
+
 -- --------------------------------------------------------
 
 --
@@ -158,8 +171,8 @@ INSERT INTO `flights` (`f_id`, `a_id`, `Source`, `Destination`, `Departure`, `Ar
 (103, 2, 'Delhi', 'Bangalore', '2022-12-29', '2022-12-29', 4000, 8000, 60),
 (104, 4, 'Delhi', 'Mumbai', '2022-11-25', '2022-11-30', 7500, 11000, 60),
 (105, 3, 'Mumbai', 'Rajasthan', '2022-12-25', '2022-12-20', 4500, 7500, 60),
-(106, 1, 'Goa', 'Mumbai', '2022-12-23', '2022-12-23', 5000, 7500, 60),
-(107, 1, 'Delhi', 'Iceland', '2022-11-01', '2022-11-05', 35000, 40000, 60),
+(106, 1, 'Goa', 'Mumbai', '2022-12-23', '2022-12-23', 5000, 7500, 59),
+(107, 1, 'Delhi', 'Iceland', '2022-11-01', '2022-11-05', 35000, 40000, 59),
 (108, 2, 'Bangalore', 'Dubai', '2022-12-14', '2022-12-28', 12000, 18000, 60),
 (109, 3, 'Delhi', 'New York', '2022-12-20', '2022-12-28', 11000, 19000, 60);
 
@@ -184,7 +197,14 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `first_name`, `last_name`, `Email`) VALUES
 (1, 'Nathan', 'yeet', 'Nathan', 'Henriques', 'nathan532009@gmail.com'),
-(2, 'Aravind', 'yeet1', 'Aravind', 'Sagar', 'aravindSagar2002@gmail.com');
+(2, 'Aravind', 'yeet1', 'Aravind', 'Sagar', 'aravindsagar.mail@gmail.com'),
+(3, 'Abhinav', 'pass', 'Abhinav', 'Borde', 'abhinavBorder@gmail.com'),
+(4, 'Aryan', 'dbms', 'Aryan', 'Singh', 'aryanSingh@gmail.com'),
+(5, 'Jake123', 'pass', 'Jake', 'Benham', 'jakeBenham@gmail.com'),
+(6, 'JOpm', 'pass', 'Jarno', 'Opmeer', 'JarnoOpmeer@gmail.com'),
+(7, 'K1m1', 'pass', 'Kimi', 'Raikonnen', 'KimiRaik@gmail.com'),
+(8, 'Aditi', 'pass', 'Aditi', 'Amonkar', 'aditiAmonkar2003@gmail.com'),
+(9, 'M1ke', 'pass', 'Mike', 'Varshavsky', 'mikeV@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -249,19 +269,19 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `aircraft_details`
 --
 ALTER TABLE `aircraft_details`
-  MODIFY `a_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `a_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `b_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `b_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `fe_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `fe_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `flights`
@@ -273,7 +293,7 @@ ALTER TABLE `flights`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
