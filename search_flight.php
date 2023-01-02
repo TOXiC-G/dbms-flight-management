@@ -14,7 +14,7 @@
         <li><a href="user_welcome.php">Home</a></li>
         <li><a class="active" href="website.php">Search Flights</a></li>
         <li><a href="cancelbooking_u.html">Cancel Booking</a></li>
-        <li id = "header-logo-li"><a href="website.php"> <img id = "header-logo" src="images/header-logo.png"></a></li>
+        <li id = "header-logo-li"><a href="user_welcome.php"> <img id = "header-logo" src="images/header-logo.png"></a></li>
       </ul>
     </nav>
   </header>

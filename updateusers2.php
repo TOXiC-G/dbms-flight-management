@@ -39,7 +39,7 @@ else{
         <li><a href="admin_users.php">Users</a></li>
         <li><a href="delete_users.html">Delete Users</a></li>
         <li><a class = "active" href="updateUsers.html">Update Users</a></li>
-        <li id = "header-logo-li"><a href="welcome.php"> <img id = "header-logo" src="images/header-logo.png"></a></li>
+        <li id = "header-logo-li"><a href="admin_users.php"> <img id = "header-logo" src="images/header-logo.png"></a></li>
       </ul>
     </nav>
   </header>

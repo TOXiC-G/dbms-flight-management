@@ -40,7 +40,7 @@ else{
             <li><a href="addaircrafthtml.php">Add Aircraft</a></li>
             <li><a href="deleteaircraft.html">Delete Aircraft</a></li>
             <li><a class="active" href="updateaircraft.html">Update Aircraft</a></li>
-            <li id = "header-logo-li"><a href="website.php"> <img id = "header-logo" src="images/header-logo.png"></a></li>
+            <li id = "header-logo-li"><a href="aircrafts.php"> <img id = "header-logo" src="images/header-logo.png"></a></li>
           </ul>
         </nav>
     </header>

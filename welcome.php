@@ -30,7 +30,7 @@
         <li><a href="booking.php">Bookings</a></li>
         <li><a href="admin_users.php">Users</a></li>
         <li><a href="addAdmin.html">Add Admin</a></li>
-        <li id = "header-logo-li"><a href="website.php"> <img id = "header-logo" src="images/header-logo.png"></a></li>
+        <li id = "header-logo-li"><a href="welcome.php"> <img id = "header-logo" src="images/header-logo.png"></a></li>
       </ul>
     </nav>
   </header>
