@@ -46,7 +46,7 @@
 
   $result = mysqli_query($conn,$sql);
 
-  echo"<table border ='1'>";
+  echo"<table border ='0'>";
   echo "<tr>
   <th>Id</th>
   <th>Aircraft ID</th>
@@ -96,7 +96,7 @@
 
   $result = mysqli_query($conn,$sql);
 
-  echo"<table border ='1'>";
+  echo"<table border ='0'>";
   echo "<tr>
   <th>UserId</th>
   <th>Username</th>
@@ -136,7 +136,7 @@
 
   $result = mysqli_query($conn,$sql);
 
-  echo"<table border ='1'>";
+  echo"<table border ='0'>";
   echo "<tr>
   <th>Aircraft ID</th>
   <th>Aircraft Model</th>
@@ -171,7 +171,7 @@
 
   $result = mysqli_query($conn,$sql);
 
-  echo"<table class = \"last-table\" border ='1'>";
+  echo"<table class = \"last-table\" border ='0'>";
   echo "<tr>
   <th>Booking_ID</th>
   <th>User ID</th>

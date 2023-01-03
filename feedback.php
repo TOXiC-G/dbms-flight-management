@@ -34,7 +34,7 @@
 
   $result = mysqli_query($conn,$sql);
 
-  echo"<table border ='1'>";
+  echo"<table border ='0'>";
   echo "<tr>
   <th>Feedback ID</th>
   <th>Name</th>

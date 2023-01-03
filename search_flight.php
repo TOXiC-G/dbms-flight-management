@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<header class = "main-header">
+  <header class = "main-header">
     <nav class = "nav main-nav">
       <ul>
         <li><a href="logout.php">Logout</a></li>
@@ -23,13 +23,6 @@
 <?php
 
 include 'config.php';
-/*function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-*/
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

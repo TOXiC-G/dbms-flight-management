@@ -32,7 +32,7 @@
 
   $result = mysqli_query($conn,$sql);
 
-  echo"<table border ='1'>";
+  echo"<table border ='0'>";
   echo "<tr>
   <th>UserId</th>
   <th>Username</th>
